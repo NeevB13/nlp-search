@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+option go_package = "./protos";
+
+package vertex;
+
+service VertexService {
+  rpc ProcessString (StringRequest) returns (JsonResponse);
+}
+
+message StringRequest {
+  string input_string = 1;
+}
+
+message JsonResponse {
+  string startDate = 1;
+  string endDate = 2;
+  string searchText = 3;
+}
